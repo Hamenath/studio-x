@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sx-black: #0A0A0A;
+  --color-sx-soft: #1A1A1A;
+  --color-sx-dark: #4A4A4A;
+  --color-sx-mid: #9A9A9A;
+  --color-sx-light: #E5E5E5;
+  --color-sx-off: #F5F5F5;
+  --color-sx-white: #FFFFFF;
+
+  --font-heading: var(--font-rajdhani), "Rajdhani", sans-serif;
+  --font-sans: var(--font-rajdhani), "Rajdhani", sans-serif;
+}
+
+:root {
+  --sx-black: #0A0A0A;
+  --sx-soft: #1A1A1A;
+  --sx-dark: #4A4A4A;
+  --sx-mid: #9A9A9A;
+  --sx-light: #E5E5E5;
+  --sx-off: #F5F5F5;
+  --sx-white: #FFFFFF;
+  --nav-h: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--sx-white);
+  color: var(--sx-black);
+  font-family: var(--font-rajdhani), "Rajdhani", sans-serif;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--sx-white);
+  color: var(--sx-black);
+  font-family: var(--font-rajdhani), "Rajdhani", sans-serif;
+  font-weight: 600;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-rajdhani), "Rajdhani", sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+/* Rajdhani Typography Classes */
+.rajdhani-light {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rajdhani-regular {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rajdhani-medium {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.rajdhani-semibold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.rajdhani-bold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Base selection */
+::selection {
+  background-color: var(--sx-black);
+  color: var(--sx-white);
+}
+
+/* Screen and Section rules */
+.screen-section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero-screen {
+  height: 100svh;
+  min-height: 100svh;
+}
+
+/* Hover standards */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.image-zoom-frame {
+  overflow: hidden;
+}
+
+.image-zoom-frame img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-frame:hover img {
+  transform: scale(1.02);
+}
