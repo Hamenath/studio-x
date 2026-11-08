@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useGsapReveal } from "@/animations/useGsapReveal";
+import ScrollTextReveal from "@/components/ui/ScrollTextReveal";
 
 const philosophyPoints = [
   {
@@ -46,12 +47,10 @@ export default function IntroSection() {
               <br />
               MEETS PURPOSE.
             </h2>
-            <p className="text-base md:text-lg text-sx-dark leading-relaxed max-w-[50ch]">
-              Studio X is an independent creative design studio focused on building
-              distinctive brands, digital experiences and visual communication. We
-              collaborate directly with ambitious businesses and creators in India
-              and worldwide to craft work that endures.
-            </p>
+            <ScrollTextReveal
+              text="Studio X is an independent creative design studio focused on building distinctive brands, digital experiences and visual communication. We collaborate directly with ambitious businesses and creators in India and worldwide to craft work that endures."
+              className="text-base md:text-lg text-sx-dark leading-relaxed max-w-[50ch] font-normal"
+            />
           </div>
 
           {/* Right Column: 3 Philosophy Points */}
