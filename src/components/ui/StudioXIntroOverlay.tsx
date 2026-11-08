@@ -11,7 +11,7 @@ function getClientSnapshot() {
   if (typeof window === "undefined") return false;
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReduced) return false;
-  return !sessionStorage.getItem("studiox_intro_seen");
+  return true; // Always show intro glass animation on page load and refresh
 }
 
 function getServerSnapshot() {
@@ -23,11 +23,19 @@ export default function StudioXIntroOverlay() {
   const [dismissed, setDismissed] = useState(false);
   const [fading, setFading] = useState(false);
 
+  // Clear any legacy session storage key
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        sessionStorage.removeItem("studiox_intro_seen");
+      } catch {
+        // Ignore storage errors in private browsing
+      }
+    }
+  }, []);
+
   const dismiss = useCallback(() => {
     setFading(true);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("studiox_intro_seen", "true");
-    }
     setTimeout(() => {
       setDismissed(true);
     }, 700);
