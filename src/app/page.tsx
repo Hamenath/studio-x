@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
 import IntroSection from "@/components/sections/IntroSection";
-import ScrollExpandShowcase from "@/components/sections/ScrollExpandShowcase";
 import ServicesSection from "@/components/sections/ServicesSection";
 import SelectedWorkSection from "@/components/sections/SelectedWorkSection";
 import WhySection from "@/components/sections/WhySection";
@@ -21,7 +20,6 @@ export default function HomePage() {
     <>
       <HeroSection />
       <IntroSection />
-      <ScrollExpandShowcase />
       <ServicesSection />
       <SelectedWorkSection />
       <WhySection />
