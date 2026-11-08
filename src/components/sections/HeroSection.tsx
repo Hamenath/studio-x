@@ -18,22 +18,22 @@ export default function HeroSection() {
 
       {/* Hero Centered Content Layer */}
       <div className="relative z-10 max-w-4xl mx-auto w-full flex flex-col items-center text-center my-auto">
-        {/* Eyebrow Pill with light green accent */}
+        {/* Eyebrow Pill */}
         <div className="mb-6 animate-fade-in max-w-full px-2">
           <span className="inline-flex items-center gap-2.5 h-7 md:h-8 px-3.5 md:px-4 bg-black/60 border border-white/20 backdrop-blur-md text-white text-[10px] md:text-xs font-semibold uppercase tracking-wider rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse shrink-0 shadow-[0_0_8px_#4ADE80]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
             <span className="hidden sm:inline">Studio X / Independent Creative Agency / Tamil Nadu, India</span>
             <span className="sm:hidden">Studio X / Creative Agency / India</span>
           </span>
         </div>
 
-        {/* Massive Centered Editorial Headline with LIMITS. in light green */}
+        {/* Massive Centered Editorial Headline */}
         <h1
           id="hero-title"
           className="font-bold tracking-tight text-white select-none text-[clamp(44px,8.5vw,118px)] leading-[0.92] max-w-4xl mx-auto mb-6 uppercase"
         >
           <span className="block">DESIGN BEYOND</span>
-          <span className="block text-[#4ADE80] drop-shadow-[0_0_40px_rgba(74,222,128,0.2)]">LIMITS.</span>
+          <span className="block">LIMITS.</span>
         </h1>
 
         {/* Centered Subhead */}
@@ -67,21 +67,21 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2.5 h-12 px-7 bg-black/50 text-white border border-white/30 backdrop-blur-md font-semibold uppercase tracking-wider text-sm hover:bg-white/15 hover:border-[#4ADE80]/50 transition-colors duration-200 active:translate-y-px shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+            className="inline-flex items-center justify-center gap-2.5 h-12 px-7 bg-black/50 text-white border border-white/30 backdrop-blur-md font-semibold uppercase tracking-wider text-sm hover:bg-white/15 hover:border-white transition-colors duration-200 active:translate-y-px shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
           >
-            <span className="grid place-items-center w-5 h-5 bg-[#4ADE80] text-black -ml-1 text-[9px] font-bold shadow-[0_0_8px_rgba(74,222,128,0.4)]">
+            <span className="grid place-items-center w-5 h-5 bg-white text-black -ml-1 text-[9px] font-bold">
               ▶
             </span>
             Start a Project
           </Link>
         </div>
 
-        {/* Centered Meta Bar with light green divider accents */}
+        {/* Centered Meta Bar */}
         <div className="mt-10 sm:mt-14 pt-6 border-t border-white/15 w-full max-w-lg mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest font-semibold px-4">
           <span>Tamil Nadu, India</span>
-          <span className="w-1 h-1 rounded-full bg-[#4ADE80]/80 shadow-[0_0_4px_#4ADE80]" />
+          <span className="w-1 h-1 rounded-full bg-white/40" />
           <span>Design Beyond Limits</span>
-          <span className="w-1 h-1 rounded-full bg-[#4ADE80]/80 shadow-[0_0_4px_#4ADE80]" />
+          <span className="w-1 h-1 rounded-full bg-white/40" />
           <span>Est. 2026</span>
         </div>
       </div>

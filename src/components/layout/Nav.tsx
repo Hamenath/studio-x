@@ -87,15 +87,8 @@ export default function Nav() {
             />
           </Link>
 
-          {/* Right Action: CTA + Three-Line Menu Toggle Button */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="hidden sm:inline-flex items-center justify-center h-10.5 px-6 text-xs uppercase tracking-wider bg-white text-sx-black border border-white hover:bg-neutral-200 transition-all duration-200 active:translate-y-px font-semibold shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
-            >
-              Start a project
-            </Link>
-
+          {/* Right Action: Three-Line Menu Toggle Button */}
+          <div className="flex items-center">
             {/* Three-Line Menu Icon Toggle */}
             <button
               type="button"
@@ -154,7 +147,7 @@ export default function Nav() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between pb-6 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#4ADE80] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span className="text-[11px] uppercase tracking-widest text-neutral-400 font-semibold">
               Navigation // Menu
             </span>
@@ -204,7 +197,7 @@ export default function Nav() {
                     <span
                       className={`text-xs font-mono transition-colors ${
                         isActive
-                          ? "text-[#4ADE80]"
+                          ? "text-white font-bold"
                           : "text-neutral-500 group-hover:text-neutral-300"
                       }`}
                     >
@@ -219,7 +212,7 @@ export default function Nav() {
                     aria-hidden="true"
                     className={`text-sm transition-all duration-200 ${
                       isActive
-                        ? "text-[#4ADE80] translate-x-0 opacity-100"
+                        ? "text-white translate-x-0 opacity-100"
                         : "text-neutral-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2"
                     }`}
                   >
