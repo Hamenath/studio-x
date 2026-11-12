@@ -318,7 +318,7 @@ const UNIFORMS = {
   brightness: 0.0,
   saturation: 1.0,
   hue: 0.0,
-  vignette: 0.21,
+  vignette: 0.0,
   blur: 0.002,
   grain: 0.101,
   seed: 4012.0,

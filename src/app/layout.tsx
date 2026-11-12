@@ -3,6 +3,7 @@ import { Rajdhani, Space_Grotesk, Inter } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import StudioXIntroOverlay from "@/components/ui/StudioXIntroOverlay";
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -53,12 +54,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-sx-white text-sx-black antialiased font-semibold">
-        <StudioXIntroOverlay />
-        <Nav />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <SmoothScrollProvider>
+          <StudioXIntroOverlay />
+          <Nav />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

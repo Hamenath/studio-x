@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useGsapReveal } from "@/animations/useGsapReveal";
 import { projects } from "@/data/projects";
 import ProjectVisualPreview from "@/components/ui/ProjectVisualPreview";
+import Interactive3DCard from "@/components/ui/Interactive3DCard";
 
 export default function SelectedWorkSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -43,59 +44,60 @@ export default function SelectedWorkSection() {
           </Link>
         </div>
 
-        {/* 6 Projects Grid */}
+        {/* 6 Projects Grid with Apple-Style Interactive 3D Perspective Tilt */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sampleProjects.map((project, idx) => (
-            <Link
-              key={project.id}
-              href={`/portfolio/${project.slug}`}
-              data-concept="true"
-              data-is-sample="true"
-              className="reveal group flex flex-col justify-between p-6 md:p-8 bg-sx-soft border border-sx-dark/60 hover:border-sx-mid transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <div>
-                {/* Visual Preview Mockup */}
-                <ProjectVisualPreview
-                  category={project.category}
-                  title={project.title}
-                />
+            <Interactive3DCard key={project.id} className="reveal h-full" maxRotation={8} depth={20}>
+              <Link
+                href={`/portfolio/${project.slug}`}
+                data-concept="true"
+                data-is-sample="true"
+                className="group flex flex-col justify-between h-full p-6 md:p-8 bg-sx-soft border border-sx-dark/60 hover:border-sx-mid transition-all duration-300"
+              >
+                <div>
+                  {/* Visual Preview Mockup */}
+                  <ProjectVisualPreview
+                    category={project.category}
+                    title={project.title}
+                  />
 
-                {/* Number & Category */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-2xl font-bold tracking-tight text-sx-mid group-hover:text-sx-white transition-colors">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-wider text-sx-light border border-sx-dark px-2.5 py-1">
-                    {project.category}
-                  </span>
-                </div>
-
-                <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight text-sx-white group-hover:text-sx-light transition-colors mb-3">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-sx-mid leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[11px] font-mono text-sx-mid bg-sx-black px-2 py-0.5 border border-sx-dark/60"
-                    >
-                      #{tag}
+                  {/* Number & Category */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-2xl font-bold tracking-tight text-sx-mid group-hover:text-sx-white transition-colors">
+                      {String(idx + 1).padStart(2, "0")}
                     </span>
-                  ))}
-                </div>
-              </div>
+                    <span className="font-mono text-xs uppercase tracking-wider text-sx-light border border-sx-dark px-2.5 py-1">
+                      {project.category}
+                    </span>
+                  </div>
 
-              <div className="pt-6 border-t border-sx-dark/60 flex items-center justify-between text-xs font-mono text-sx-mid">
-                <span className="text-sx-light">CONCEPT / SAMPLE WORK</span>
-                <ArrowUpRight className="w-4 h-4 text-sx-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
-            </Link>
+                  <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight text-sx-white group-hover:text-sx-light transition-colors mb-3">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-sm text-sx-mid leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] font-mono text-sx-mid bg-sx-black px-2 py-0.5 border border-sx-dark/60"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-sx-dark/60 flex items-center justify-between text-xs font-mono text-sx-mid">
+                  <span className="text-sx-light">CONCEPT / SAMPLE WORK</span>
+                  <ArrowUpRight className="w-4 h-4 text-sx-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+              </Link>
+            </Interactive3DCard>
           ))}
         </div>
 

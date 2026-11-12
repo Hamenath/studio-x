@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ShaderBackground } from "@/components/ui/purp-wave-shader";
+import Apple3DSpatialPrism from "@/components/ui/Apple3DSpatialPrism";
 
 export default function HeroSection() {
   return (
@@ -18,6 +19,11 @@ export default function HeroSection() {
 
       {/* Hero Centered Content Layer */}
       <div className="relative z-10 max-w-4xl mx-auto w-full flex flex-col items-center text-center my-auto">
+        {/* Apple-Style Interactive 3D Spatial Emblem */}
+        <div className="mb-4 animate-fade-in">
+          <Apple3DSpatialPrism size={72} />
+        </div>
+
         {/* Eyebrow Pill */}
         <div className="mb-6 animate-fade-in max-w-full px-2">
           <span className="inline-flex items-center gap-2.5 h-7 md:h-8 px-3.5 md:px-4 bg-black/60 border border-white/20 backdrop-blur-md text-white text-[10px] md:text-xs font-semibold uppercase tracking-wider rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.4)]">

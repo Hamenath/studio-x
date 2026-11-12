@@ -62,19 +62,17 @@ export default function Nav() {
         Skip to content
       </a>
 
-      {/* Liquid Glassmorphism Navbar */}
+      {/* Transparent Minimalist Navbar */}
       <header
-        className={`fixed top-0 left-0 right-0 h-18 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-black/60 backdrop-blur-2xl border-b border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.15)]"
-            : "bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.12)]"
+        className={`fixed top-0 left-0 right-0 h-18 z-50 transition-all duration-300 bg-transparent ${
+          scrolled ? "backdrop-blur-md border-b border-black/5" : "border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto h-full px-6 md:px-12 flex items-center justify-between">
-          {/* Studio X Approved Transparent Vector Logo */}
+          {/* Studio X Approved Transparent Vector Logo with Adaptive Tone */}
           <Link
             href="/"
-            className="flex items-center shrink-0"
+            className="flex items-center shrink-0 transition-opacity hover:opacity-85"
             aria-label="Studio X — Return to Homepage"
           >
             <Image
@@ -83,11 +81,13 @@ export default function Nav() {
               width={140}
               height={34}
               priority
-              className="h-7 md:h-8 w-auto"
+              className={`h-7 md:h-8 w-auto transition-all duration-300 ${
+                scrolled ? "brightness-0" : ""
+              }`}
             />
           </Link>
 
-          {/* Right Action: Three-Line Menu Toggle Button */}
+          {/* Right Action: Adaptive Three-Line Menu Toggle Button */}
           <div className="flex items-center">
             {/* Three-Line Menu Icon Toggle */}
             <button
@@ -96,26 +96,36 @@ export default function Nav() {
               aria-expanded={isOpen}
               aria-controls="side-navigation-drawer"
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-              className="group relative flex items-center gap-3 h-10.5 px-4 border border-white/20 hover:border-white/50 bg-black/40 hover:bg-white/10 backdrop-blur-md transition-all duration-200 cursor-pointer text-white"
+              className={`group relative flex items-center gap-3 h-10 px-4 border backdrop-blur-md transition-all duration-300 cursor-pointer ${
+                scrolled
+                  ? "border-black/30 hover:border-black bg-black/5 text-black"
+                  : "border-white/30 hover:border-white bg-black/20 text-white"
+              }`}
             >
-              <span className="hidden md:inline text-xs uppercase tracking-widest font-semibold text-neutral-300 group-hover:text-white transition-colors">
+              <span
+                className={`hidden md:inline text-xs uppercase tracking-widest font-semibold transition-colors ${
+                  scrolled
+                    ? "text-black group-hover:text-black"
+                    : "text-neutral-200 group-hover:text-white"
+                }`}
+              >
                 {isOpen ? "Close" : "Menu"}
               </span>
               <div className="flex flex-col justify-center items-end gap-1.25 w-5 h-4">
                 <span
-                  className={`h-[1.75px] bg-white transition-all duration-300 ${
-                    isOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"
-                  }`}
+                  className={`h-[1.75px] transition-all duration-300 ${
+                    scrolled ? "bg-black" : "bg-white"
+                  } ${isOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"}`}
                 />
                 <span
-                  className={`h-[1.75px] bg-white transition-all duration-300 ${
-                    isOpen ? "opacity-0" : "w-3.5 group-hover:w-5"
-                  }`}
+                  className={`h-[1.75px] transition-all duration-300 ${
+                    scrolled ? "bg-black" : "bg-white"
+                  } ${isOpen ? "opacity-0" : "w-3.5 group-hover:w-5"}`}
                 />
                 <span
-                  className={`h-[1.75px] bg-white transition-all duration-300 ${
-                    isOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"
-                  }`}
+                  className={`h-[1.75px] transition-all duration-300 ${
+                    scrolled ? "bg-black" : "bg-white"
+                  } ${isOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"}`}
                 />
               </div>
             </button>
@@ -140,8 +150,10 @@ export default function Nav() {
         role="dialog"
         aria-modal="true"
         aria-label="Site Navigation"
-        className={`fixed top-0 right-0 bottom-0 h-screen w-full sm:w-[380px] lg:w-1/4 min-w-[320px] max-w-full z-60 bg-sx-black/95 backdrop-blur-2xl border-l border-white/15 shadow-[-20px_0_60px_rgba(0,0,0,0.85)] flex flex-col justify-between p-6 sm:p-8 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 bottom-0 h-screen w-full sm:w-[380px] lg:w-1/4 min-w-[320px] max-w-full z-60 bg-sx-black/95 backdrop-blur-2xl border-l border-white/15 flex flex-col justify-between p-6 sm:p-8 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen
+            ? "translate-x-0 shadow-[-20px_0_60px_rgba(0,0,0,0.85)] pointer-events-auto"
+            : "translate-x-full shadow-none pointer-events-none"
         }`}
       >
         {/* Drawer Header */}
